@@ -61,14 +61,15 @@ button.addEventListener("click", () => {
 
     let result;
     if (direction === "bgnToEur") {
-        result = Math.round(amount / RATE);
-        resultElement.textContent = `${result} EUR`;
+        result = amount / RATE;
+        resultElement.textContent = `${result.toFixed(2)} EUR`;
     } else {
-        result = Math.round(amount * RATE);
-        resultElement.textContent = `${result} BGN`;
+        result = amount * RATE;
+        resultElement.textContent = `${result.toFixed(2)} BGN`;
     }
 });
 
 changeLanguage("bg");
+
 
 
