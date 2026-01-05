@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="bg">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Калкулатор Евро/Лева</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            
+            <h1>Калкулатор Лев ⇄ Евро</h1>
+            <label for="language">Избор на език: </label>
+            <select id="language">
+                <option value="bg">Български</option>
+                <option value="en">English</option>
+            </select>
+            <div class="calculator">
+                <label for="amount">Сума:</label>
+                <input type="number" id="amount" min="0" placeholder="Въведи сумата!">
+                
+                <label for="currency">Валута:</label>
+                <select id="currency">
+                    <option value="bgnToEur">Лев → Евро</option>
+                    <option value="eurToBgn">Евро → Лев</option>
+                </select>
+                
+                <button id="converter">Конвертирай</button>
+                <p class="rate">Курс: 1 EUR = 1.95583 BGN</p>
+                <h2 id="result">Резултат: </h2>
+            </div>
+            <footer>
+            <p>&copy; 2026 Палмира Георгиева. Всички права запазени.</p>
+            <p>Курсът е фиксиран: 1 EUR = 1.95583 BGN</p>
+           </footer>
+
+        </div>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
