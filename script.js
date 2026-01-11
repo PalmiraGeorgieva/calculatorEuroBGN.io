@@ -1,4 +1,3 @@
-
 const translations = {
     bg: {
         title: "Калкулатор Лев ⇄ Евро",
@@ -8,7 +7,7 @@ const translations = {
         currencyOptions: ["Лев → Евро", "Евро → Лев"],
         convert: "Конвертирай",
         rate: "Курс: 1 EUR = 1.95583 BGN",
-        resultText: "Резултат:",
+        resultLabel: "Резултат:",   
         error: "Моля, въведи валидна сума."
     },
     en: {
@@ -19,7 +18,7 @@ const translations = {
         currencyOptions: ["BGN → EUR", "EUR → BGN"],
         convert: "Convert",
         rate: "Rate: 1 EUR = 1.95583 BGN",
-        resultText: "Result:",
+        resultLabel: "Result:",    
         error: "Please enter a valid amount."
     }
 };
@@ -43,6 +42,7 @@ function changeLanguage(lang) {
     button.textContent = translations[lang].convert;
     rateElement.textContent = translations[lang].rate;
     resultElement.textContent = translations[lang].resultText;
+    document.getElementById("result-label").textContent = translations[lang].resultLabel;
 }
 
 languageSelect.addEventListener("change", () => {
@@ -59,17 +59,23 @@ button.addEventListener("click", () => {
         return;
     }
 
-    let result;
+   let result;
     if (direction === "bgnToEur") {
         result = amount / RATE;
-        resultElement.textContent = `${result.toFixed(2)} EUR`;
+       
+        resultElement.textContent = `${result.toFixed(2)} EUR`; 
+        setTimeout(() => resultElement.classList.add("show"), 50);
+
     } else {
         result = amount * RATE;
-        resultElement.textContent = `${result.toFixed(2)} BGN`;
+     
+        resultElement.textContent = `${result.toFixed(2)} BGN`; 
+        setTimeout(() => resultElement.classList.add("show"), 50);
     }
 });
 
 changeLanguage("bg");
+
 
 
 
