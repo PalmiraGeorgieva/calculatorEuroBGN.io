@@ -29,6 +29,7 @@ const currencySelect = document.getElementById("currency");
 const resultElement = document.getElementById("result");
 const button = document.getElementById("converter");
 const rateElement = document.querySelector(".rate");
+const clearButton = document.getElementById('clear');
 
 const RATE = 1.95583;
 
@@ -47,6 +48,12 @@ function changeLanguage(lang) {
 
 languageSelect.addEventListener("change", () => {
     changeLanguage(languageSelect.value);
+});
+
+clearButton.addEventListener('click', () => {
+    amountInput.value = '';
+    resultElement.textContent = '';
+    resultElement.classList.remove('show');
 });
 
 button.addEventListener("click", () => {
@@ -75,6 +82,7 @@ button.addEventListener("click", () => {
 });
 
 changeLanguage("bg");
+
 
 
 
